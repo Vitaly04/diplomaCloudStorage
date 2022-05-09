@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  app:
+      image: 'myapp:1.1'
+
+      build: .
+
+      ports:
+        - '8080:8080'
+
+      container_name: 'app1'
+
+  mysql:
+    image: mysql:latest
+
+    ports:
+      - "3306:3306"
+    container_name: 'root'
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+
